@@ -1,5 +1,10 @@
-apiVersion: extensions/v1beta1
-kind: Deployment
+apiVersion: kubeone.io/v1alpha1
+kind: KubeOneCluster
+name: demo
+versions:
+  kubernetes: '1.14.2'
+cloudProvider:
+  name: 'aws'
 metadata:
   labels:
     service: reverseproxy
@@ -25,5 +30,4 @@ spec:
         ports:
         - containerPort: 8080
       restartPolicy: Always
-
 
